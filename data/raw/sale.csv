@@ -1,4 +1,4 @@
-transaction_date,customer_id,description,stock_code,invoice_no,quantity,sales,unit_price
+transaction_date,customer_id,description,stock_code,invoice_no,quantity,sale,unit_price
 12/1/2020 8:26,17850.0,Dog and Puppy Pads,85123A,536365,1,15.3,15.3
 12/1/2020 8:34,13047.0,Pet Odor Eliminator,84879,536367,6,60.84,10.14
 12/1/2020 8:34,13047.0,Rechargeable Pet Nail Grinder,22960,536368,1,25.5,25.5
