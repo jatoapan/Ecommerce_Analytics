@@ -1,8 +1,11 @@
 from sqlalchemy import create_engine
 import pandas as pd
+import os
+from dotenv import load_dotenv
 
-URL = "postgresql://lector_user:password@db.eazsiksqqitvvkhjpxop.supabase.co:5432/postgres"
+load_dotenv()
 
+URL = os.getenv("DATABASE_URL")
 engine = create_engine(URL)
 query = "SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = 'public'"
 result = pd.read_sql_query(query, engine)
