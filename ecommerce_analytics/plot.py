@@ -7,9 +7,10 @@ def plot_completeness_barplot(df, column, df_name=None):
     completeness_df = completeness_df.isna().agg(["sum"]).transpose()
     completeness_df["Complete Data"] = len(df) - completeness_df["sum"]
     completeness_df = round(completeness_df/len(df), 2)
+    completeness_df.rename(columns={"sum":"Missing Data"},inplace=True)
     print(completeness_df)
     completeness_df.reset_index(inplace=True)
-    completeness_df.rename(columns={"index":"Column","sum":"Missing Data"},inplace=True)
+    completeness_df.rename(columns={"index":"Column"},inplace=True)
     completeness_df = completeness_df.melt(
         id_vars="Column", 
         value_vars=["Missing Data", "Complete Data"],
@@ -33,8 +34,10 @@ def plot_completeness_barplot(df, column, df_name=None):
 def plot_uniqueness_barplot(df, column, df_name=None):
     description_df = df[column]
     description_df = description_df.agg(["nunique"]).transpose()
+    description_df.rename(columns={"nunique":"Unique Values"},inplace=True)
+    print(description_df)
     description_df.reset_index(inplace=True)
-    description_df.rename(columns={"index":"Column","nunique":"Unique Values"},inplace=True)
+    description_df.rename(columns={"index":"Column"},inplace=True)
     description_df["Column"] = description_df["Column"].str.replace(r"[,.:;_\-]"," ", regex=True).str.title()
     description_df.sort_values(["Unique Values"],ascending=False,inplace=True)
     sns.catplot(
