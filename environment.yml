@@ -12,6 +12,16 @@ dependencies:
   - pip
   - pyprojroot
   - python=3.10
+  - pandas
+  - numpy
+  - scipy
+  - scikit-learn
+  - joblib
+  - matplotlib
+  - seaborn
+  - plotly
+  - statsmodels
+  - ipython
+  - sqlalchemy
   - pip:
     - pyhere
-    

@@ -5,4 +5,14 @@ pathlib
 pyprojroot
 # Dependencias de pip deben listarse con su nombre de paquete:
 pyhere
-
+pandas
+numpy
+scipy
+scikit-learn
+joblib
+matplotlib
+seaborn
+plotly
+statsmodels
+ipython
+sqlalchemy
